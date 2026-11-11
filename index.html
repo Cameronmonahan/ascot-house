@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ascot House — The Apprenticeship</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#231419;
+  --plum:#3D1F29;
+  --oxblood:#6B2D3A;
+  --taupe:#B7A489;
+  --mushroom:#E7DCCB;
+  --cream:#F4EDE1;
+  --espresso:#2A1B1E;
+  --foil:#B8925A;
+  --serif:'Cormorant Garamond', 'Garamond', 'Times New Roman', serif;
+  --sans:'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif;
+}
+body{margin:0;background:var(--cream);color:var(--espresso);font-family:var(--sans);font-size:17px;line-height:1.65}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--foil);outline-offset:3px}
+.page{width:100%}
+.wrap{max-width:1160px;margin:0 auto;padding:0 40px;box-sizing:border-box}
+h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;letter-spacing:0}
+p{margin:0}
+.foil-rule{height:1px;background:var(--foil);border:0;margin:0;opacity:0.7}
+
+/* top bar */
+.top{position:relative;overflow:hidden;background:var(--night);color:var(--cream);display:flex;flex-direction:column;justify-content:space-between;min-height:380px}
+.top-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;z-index:0;display:block}
+.top::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(35,20,25,0.94) 0%,rgba(35,20,25,0.72) 45%,rgba(35,20,25,0.4) 100%)}
+.top .wrap{position:relative;z-index:2}
+.top-title{font-family:var(--serif);font-style:italic;font-size:72px;line-height:1;padding-bottom:44px}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:26px;padding-bottom:26px;gap:24px;flex-wrap:wrap}
+.mark{font-family:var(--serif);font-size:30px;font-weight:500;text-decoration:none;font-style:italic;letter-spacing:0.01em}
+.nav{display:flex;gap:30px;align-items:center;flex-wrap:wrap}
+.nav a{text-decoration:none;font-size:15px;color:var(--taupe)}
+.nav a:hover{color:var(--cream)}
+
+.btn{display:inline-block;background:var(--foil);color:var(--night);text-decoration:none;font-weight:600;font-size:15px;padding:15px 30px;border:0;border-radius:0;cursor:pointer;font-family:var(--sans);letter-spacing:0.02em}
+.btn:hover{background:#c9a46c}
+.btn-quiet{display:inline-block;color:inherit;font-size:16px;text-decoration:none;border-bottom:1px solid var(--foil);padding-bottom:4px}
+
+/* hero */
+.hero{background:var(--night);color:var(--cream);padding:112px 0 0;text-align:center}
+.hero .stack{max-width:860px;margin:0 auto;padding:0 40px;box-sizing:border-box}
+.hero h1{font-size:88px;line-height:1.0;font-weight:500}
+.hero h1 em{font-style:italic;font-weight:400}
+.hero .lead{margin:36px auto 0;max-width:34em;font-size:20px;color:var(--taupe)}
+.hero .actions{margin-top:44px;display:flex;gap:36px;justify-content:center;align-items:center;flex-wrap:wrap}
+.hero .actions .btn-quiet{color:var(--cream)}
+.hero-photo{margin:88px 0 0;height:560px;padding:0;overflow:hidden;background:var(--plum)}
+.hero-img{width:100%;height:100%;object-fit:cover;object-position:50% 45%;display:block}
+.who-img{width:100%;aspect-ratio:4 / 5;object-fit:cover;object-position:60% 30%;display:block}
+.strip-band{background:var(--night);padding:96px 0}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.strip img{width:100%;height:440px;object-fit:cover;display:block}
+.hero-photo .cap{max-width:22em;font-size:15px;color:var(--taupe)}
+.hero-photo strong{display:block;font-family:var(--serif);font-size:28px;font-weight:500;font-style:italic;color:var(--cream);margin-bottom:8px}
+
+/* who */
+.who{background:var(--cream);padding:128px 0 112px}
+.who .wrap{display:grid;grid-template-columns:0.9fr 1.1fr;gap:88px;align-items:start}
+.who h2{font-size:56px;line-height:1.05}
+.who .body p{font-size:20px;line-height:1.65;max-width:31em}
+.who .body p+p{margin-top:24px}
+.who .body .sub{color:#6A5A5C;font-size:16px}
+
+/* houses */
+.houses{background:var(--mushroom);padding:120px 0 104px}
+.houses h2{font-size:56px;line-height:1.05}
+.houses .intro{margin-top:24px;max-width:36em;font-size:19px}
+.house{display:grid;grid-template-columns:0.9fr 1.1fr;gap:88px;padding:64px 0;border-top:1px solid rgba(107,45,58,0.35)}
+.house:last-of-type{border-bottom:1px solid rgba(107,45,58,0.35)}
+.house .numeral{font-family:var(--serif);font-size:104px;line-height:0.9;font-weight:400;font-style:italic;color:var(--oxblood)}
+.house h3{font-size:40px;line-height:1.1;margin-top:22px}
+.house .motto{font-family:var(--serif);font-style:italic;font-size:24px;margin-top:12px;color:#6A5A5C}
+.house .goal{font-size:18px;margin-bottom:26px}
+.house ul{list-style:none;padding:0;margin:0}
+.house li{padding:11px 0;border-bottom:1px solid rgba(42,27,30,0.12)}
+.house li:first-child{padding-top:0}
+.house li:last-child{border-bottom:0}
+.shift{margin-top:32px;font-family:var(--serif);font-size:28px;line-height:1.25;font-style:italic}
+.shift .from{color:#6A5A5C}
+
+/* method */
+.method{background:var(--plum);color:var(--cream);padding:120px 0}
+.method h2{font-size:56px;line-height:1.05}
+.method .intro{margin-top:24px;font-size:19px;max-width:34em;color:var(--taupe)}
+.pillars{margin-top:72px;display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
+.pillar{border-top:1px solid var(--foil);padding-top:28px}
+.pillar h3{font-size:36px;font-style:italic}
+.pillar p{margin-top:14px;font-size:16px;color:var(--taupe);max-width:16em}
+
+/* how it runs + ledger */
+.run{background:var(--cream);padding:120px 0}
+.run .wrap{display:grid;grid-template-columns:1fr 1fr;gap:96px}
+.run h2{font-size:56px;line-height:1.05}
+.row{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:28px 0;border-top:1px solid rgba(107,45,58,0.3)}
+.row:last-child{border-bottom:1px solid rgba(107,45,58,0.3)}
+.row h3{font-size:26px;line-height:1.15}
+.row p{font-size:16px;color:#4F3C40}
+.ledger h2{font-size:56px;line-height:1.05}
+.ledger .intro{margin-top:24px;font-size:17px;color:#4F3C40}
+.ledger ul{list-style:none;padding:0;margin:44px 0 0}
+.ledger li{display:flex;justify-content:space-between;gap:24px;padding:20px 0;border-top:1px solid rgba(107,45,58,0.3);font-size:18px}
+.ledger li:last-child{border-bottom:1px solid rgba(107,45,58,0.3)}
+.ledger li span{color:#4F3C40;font-size:15px;text-align:right;max-width:18em}
+
+/* positioning */
+.stance{background:var(--oxblood);color:var(--cream);padding:136px 0}
+.stance p{font-family:var(--serif);font-size:60px;line-height:1.14;max-width:21em;margin:0 auto;text-align:center;font-weight:500}
+.stance em{color:var(--mushroom)}
+
+/* apply */
+.apply{background:var(--mushroom);padding:120px 0}
+.apply .wrap{display:grid;grid-template-columns:0.9fr 1.1fr;gap:96px}
+.apply h2{font-size:56px;line-height:1.05}
+.apply .copy{margin-top:24px;font-size:18px;max-width:24em}
+.apply .invest{margin-top:44px;font-size:16px;color:#4F3C40;max-width:24em}
+form{display:grid;grid-template-columns:1fr 1fr;gap:26px 28px;background:var(--cream);padding:48px;box-sizing:border-box}
+.field{display:flex;flex-direction:column;gap:8px}
+.field.full{grid-column:1 / -1}
+label{font-size:15px;font-weight:600;color:var(--espresso)}
+input,select,textarea{font-family:var(--sans);font-size:17px;color:var(--espresso);background:#FBF7F0;border:1px solid var(--taupe);border-radius:0;padding:14px 16px;box-sizing:border-box;width:100%}
+textarea{min-height:120px;resize:vertical}
+.form-foot{grid-column:1 / -1;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:8px}
+.form-foot p{font-size:14px;color:#6A5A5C;max-width:26em}
+
+/* footer */
+.foot{background:var(--night);color:var(--taupe);padding:72px 0 60px}
+.foot .wrap{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;align-items:flex-end}
+.foot .mark{color:var(--cream)}
+.foot p{font-size:15px;max-width:30em}
+
+@media (max-width:900px){
+  .hero h1{font-size:60px}
+  .who .wrap,.house,.run .wrap,.apply .wrap{grid-template-columns:1fr;gap:48px}
+  .who h2,.houses h2,.method h2,.run h2,.ledger h2,.apply h2{font-size:44px}
+  .pillars{grid-template-columns:1fr 1fr;gap:36px}
+  .stance p{font-size:42px}
+  .hero-photo{height:380px}
+  .house .numeral{font-size:76px}
+}
+@media (max-width:600px){
+  .wrap{padding:0 22px}
+  .hero{padding:72px 0 0}
+  .hero .stack{padding:0 22px}
+  .hero h1{font-size:44px}
+  .hero-photo{margin-top:56px;height:300px;padding:28px}
+  .pillars{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr;gap:10px}
+  form{grid-template-columns:1fr;padding:28px}
+  .nav{gap:18px}
+  .stance{padding:96px 0}
+  .stance p{font-size:32px}
+  .ledger li{flex-direction:column;gap:6px}
+  .ledger li span{text-align:left}
+  .strip{grid-template-columns:1fr 1fr;gap:10px}
+  .strip img{height:260px}
+  .top{min-height:320px}
+  .top-title{font-size:48px;padding-bottom:28px}
+  .who-img{aspect-ratio:3 / 4}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+
+<div class="page">
+
+<header class="top">
+  <img class="top-img" src="images/kate-05.jpg" alt="Kate with a horse, close and in soft focus">
+  <div class="wrap">
+    <a class="mark" href="#top">Ascot House</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#houses">The Houses</a>
+      <a href="#method">The method</a>
+      <a href="#who">Who it is for</a>
+      <a class="btn" href="#apply">Request an invitation</a>
+    </nav>
+  </div>
+  <div class="wrap">
+    <p class="top-title">The Apprenticeship</p>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="stack">
+    <h1>Fully booked is <em>not</em> the finish line.</h1>
+    <p class="lead">Ascot House is a selective apprenticeship that turns a busy stylist into a salon owner. You learn to price for profit, lead an assistant, and build income that does not rest on your hours alone.</p>
+    <div class="actions">
+      <a class="btn" href="#apply">Request an invitation</a>
+      <a class="btn-quiet" href="#houses">Read the four Houses</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <figure class="hero-photo" style="margin-left:0;margin-right:0">
+      <img class="hero-img" src="images/kate-11.jpg" alt="Kate standing beside a dark horse in soft, bright light">
+    </figure>
+  </div>
+</section>
+
+<section class="who" id="who">
+  <div class="wrap">
+    <img class="who-img" src="images/kate-12.jpg" alt="Kate standing beside a horse, looking off into soft light">
+    <div>
+      <h2>For stylists who have outgrown the chair.</h2>
+      <div class="body">
+        <p>You are fully booked, or close to it. You earn well, and your income has a ceiling set by the hours you can work. You want more money without more hours, and you can feel that you are ready for the next move, even if you cannot yet name it.</p>
+        <p>Ascot House is built for that moment. You do not sign up and wait for a seat. You are accepted, and places are limited.</p>
+        <p class="sub">Best suited to stylists already running a full book who are ready to change how the business works.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="houses" id="houses">
+  <div class="wrap">
+    <h2>Four Houses, one ascent.</h2>
+    <p class="intro">Each House builds on the one before it. You move forward when the current House holds, not when the calendar says so.</p>
+
+    <article class="house">
+      <div>
+        <div class="numeral">I</div>
+        <h3>The Foundation House</h3>
+        <p class="motto">Mastery before multiplication.</p>
+      </div>
+      <div>
+        <p class="goal">Clean up, elevate, and stabilize the business you already run.</p>
+        <ul>
+          <li>Pricing for profit, not survival</li>
+          <li>A client experience at the luxury standard</li>
+          <li>Time and energy you can actually control</li>
+          <li>Boundaries as a source of power</li>
+          <li>Becoming fully booked on purpose</li>
+        </ul>
+        <p class="shift" style="color: #6B2D3A">From overwhelmed stylist to controlled, premium operator.</p>
+      </div>
+    </article>
+
+    <article class="house">
+      <div>
+        <div class="numeral">II</div>
+        <h3>The Apprenticeship House</h3>
+        <p class="motto">Introducing leverage.</p>
+      </div>
+      <div>
+        <p class="goal">Prepare for and hire your first assistant.</p>
+        <ul>
+          <li>Knowing when you are truly ready, which most stylists are not yet</li>
+          <li>Hiring from strength rather than desperation</li>
+          <li>Positioning the role as something people aspire to</li>
+          <li>Pay structured to stay profitable</li>
+          <li>A simple legal and operational setup</li>
+        </ul>
+        <p class="shift" style="color: #6B2D3A"><span class="from">From "I do everything"</span> to "I begin to delegate."</p>
+      </div>
+    </article>
+
+    <article class="house">
+      <div>
+        <div class="numeral">III</div>
+        <h3>The Ascension House</h3>
+        <p class="motto">Becoming the leader.</p>
+      </div>
+      <div>
+        <p class="goal">Train and lead an assistant into a revenue-producing asset.</p>
+        <ul>
+          <li>Training systems you follow step by step, not by guesswork</li>
+          <li>A leadership identity and clear communication</li>
+          <li>Loyalty and buy-in from the people you lead</li>
+          <li>Output that grows without burning you out</li>
+          <li>Letting go of control, which is the hardest part</li>
+        </ul>
+        <p class="shift" style="color: #6B2D3A"><span class="from">From stylist</span> to leader.</p>
+      </div>
+    </article>
+
+    <article class="house">
+      <div>
+        <div class="numeral">IV</div>
+        <h3>The Expansion House</h3>
+        <p class="motto">Building the business beyond you.</p>
+      </div>
+      <div>
+        <p class="goal">Turn your assistant into profit and grow your own income with it.</p>
+        <ul>
+          <li>Delegating services, not just tasks</li>
+          <li>Doubling income without doubling hours</li>
+          <li>A plan for expanding capacity</li>
+          <li>A mini brand inside your own chair</li>
+          <li>The long view: a team, a suite, or teaching others</li>
+        </ul>
+        <p class="shift" style="color: #6B2D3A"><span class="from">From leader</span> to business owner.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="method" id="method">
+  <div class="wrap">
+    <h2>The Ascot Method</h2>
+    <p class="intro">Luxury standards and strategic leverage, held together. Every House applies four principles.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <h3>Leadership</h3>
+        <p>Lead people with a clear standard and without drama.</p>
+      </div>
+      <div class="pillar">
+        <h3>Leverage</h3>
+        <p>Let systems and people carry work that once needed you in the room.</p>
+      </div>
+      <div class="pillar">
+        <h3>Luxury</h3>
+        <p>Deliver a client experience that justifies the price you charge.</p>
+      </div>
+      <div class="pillar">
+        <h3>Longevity</h3>
+        <p>Build a business that outlasts your busiest season.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="strip-band" aria-label="Photographs of Kate with a horse">
+  <div class="wrap strip">
+    <img src="images/kate-02.jpg" alt="Kate with her eyes closed, resting her face against a horse">
+    <img src="images/kate-06.jpg" alt="Kate leaning her head against a horse">
+    <img src="images/kate-09.jpg" alt="Kate in soft focus beside a horse">
+    <img src="images/kate-01.jpg" alt="Kate looking away from the camera with a horse in the foreground">
+  </div>
+</section>
+
+<section class="run" id="run">
+  <div class="wrap">
+    <div>
+      <h2>Designed around a full calendar.</h2>
+      <div style="margin-top:56px">
+        <div class="row">
+          <h3>Training drops</h3>
+          <p>Short, focused lessons released each week. Watch them between clients, not in place of them.</p>
+        </div>
+        <div class="row">
+          <h3>House Calls</h3>
+          <p>Live coaching sessions where you bring your real numbers and your real problems.</p>
+        </div>
+        <div class="row">
+          <h3>Implementation weeks</h3>
+          <p>Protected time to apply each lesson inside your own business, not only to learn it.</p>
+        </div>
+      </div>
+    </div>
+    <div class="ledger">
+      <h2>What you take with you.</h2>
+      <p class="intro">Six Blueprints, ready to use from the first week. Each one is written for a salon, so nothing starts from a blank page.</p>
+      <ul>
+        <li>Hiring scripts <span>The words you use to interview, offer, and say no</span></li>
+        <li>Assistant training roadmap <span>The order in which a new assistant learns the work</span></li>
+        <li>Pricing calculator <span>Your rate, set from your costs and your target income</span></li>
+        <li>Client experience checklist <span>Every touchpoint, held to the luxury standard</span></li>
+        <li>Delegation map <span>Which services move to whom, and when</span></li>
+        <li>Revenue expansion plan <span>Your route from one income stream to several</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="stance">
+  <div class="wrap">
+    <p>You are not learning how to hire an assistant. You are learning how to <em>buy back your time</em>, grow your income, and step into ownership, without chaos.</p>
+  </div>
+</section>
+
+<section class="apply" id="apply">
+  <div class="wrap">
+    <div>
+      <h2>Request an invitation.</h2>
+      <p class="copy">Tell us about your business. We review every request by hand and reply within [RESPONSE WINDOW].</p>
+      <p class="invest">Investment: [YOUR PRICE], shared with you on invitation. Places are limited to the members we can serve well.</p>
+    </div>
+    <form action="#" onsubmit="return false">
+      <div class="field">
+        <label for="f-name">Full name</label>
+        <input id="f-name" name="name" type="text" autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="f-email">Email</label>
+        <input id="f-email" name="email" type="email" autocomplete="email">
+      </div>
+      <div class="field full">
+        <label for="f-salon">Salon or suite name</label>
+        <input id="f-salon" name="salon" type="text">
+      </div>
+      <div class="field full">
+        <label for="f-book">How full is your book right now?</label>
+        <select id="f-book" name="book">
+          <option>Fully booked</option>
+          <option>Nearly fully booked</option>
+          <option>Booked, with open time</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="field full">
+        <label for="f-change">What would you change first if you could?</label>
+        <textarea id="f-change" name="change"></textarea>
+      </div>
+      <div class="form-foot">
+        <p>We use your details only to reply to your request.</p>
+        <button class="btn" type="submit">Send my request</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <a class="mark" href="#top">Ascot House</a>
+      <p style="margin-top:14px">An apprenticeship for stylists who are ready to own the business.</p>
+    </div>
+    <p>Coming next: The Estate, The Equestrian Circle, and The Ascot Summit.</p>
+  </div>
+</footer>
+
+</div>
+
+</body>
+</html>
