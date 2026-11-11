@@ -11,9 +11,9 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://use.typekit.net/xhl6oyx.css">
 <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-@font-face{font-family:'Degular';src:local('Degular'),local('Degular-Medium'),local('Degular Medium');font-weight:400 600;font-style:normal;font-display:swap}
 :root{
   --ink:#1C1216;
   --plum:#33192A;
@@ -24,7 +24,7 @@
   --stone:#6E645C;
   --line:rgba(28,18,22,0.14);
   --foil:#A88653;
-  --serif:'Degular','Albert Sans','Helvetica Neue',Arial,sans-serif;
+  --serif:'degular-display','degular','Albert Sans','Helvetica Neue',Arial,sans-serif;
   --sans:'Albert Sans','Helvetica Neue',Arial,sans-serif;
 }
 *{box-sizing:border-box}
@@ -32,7 +32,7 @@ body{margin:0;background:var(--bone);color:var(--ink);font-family:var(--sans);fo
 a{color:inherit}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--foil);outline-offset:4px}
 p{margin:0}
-h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;letter-spacing:-0.01em}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-0.01em}
 img{display:block}
 
 /* banner */
@@ -49,7 +49,7 @@ img{display:block}
 .links .pill:hover{background:var(--bone);color:var(--ink)}
 .banner-copy{position:relative;z-index:2;margin-top:auto;padding:0 64px 88px;display:flex;justify-content:space-between;align-items:flex-end;gap:48px;flex-wrap:wrap}
 .banner h1{font-size:clamp(56px,8.2vw,128px);line-height:0.96;max-width:11.5em;letter-spacing:-0.025em}
-.banner h1 em{font-style:normal;color:var(--taupe)}
+.banner h1 em{font-style:italic;color:var(--taupe)}
 .banner-side{max-width:320px;padding-bottom:12px}
 .banner-side p{font-size:16px;opacity:0.9}
 .banner-side .title{font-family:var(--serif);font-style:normal;font-size:30px;line-height:1.1;margin-bottom:16px;opacity:1}
@@ -121,7 +121,7 @@ img{display:block}
 /* stance */
 .stance{background:var(--oxblood);color:var(--bone);padding:200px 64px}
 .stance p{font-family:var(--serif);font-size:clamp(40px,4.9vw,72px);line-height:1.12;max-width:20em;margin:0 auto;text-align:center}
-.stance em{font-style:normal;color:var(--mushroom)}
+.stance em{font-style:italic;color:var(--mushroom)}
 
 /* apply */
 .apply{display:grid;grid-template-columns:5fr 6fr;background:var(--bone)}
